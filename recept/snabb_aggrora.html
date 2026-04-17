@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Snabb Äggröra med Grönsaker</title>
+<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .quick-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .category {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .nutrition {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .nutrition h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .macro-item {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        .macro-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .macro-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+        .ingredients, .instructions {
+            margin: 25px 0;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        .tip {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .time-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Snabb Äggröra med Grönsaker",
+  "recipeIngredient": [
+    "3 hela ägg (ca 180g → 21g protein)",
+    "1 msk smör eller olivolja (15g/15ml)",
+    "2 msk mjölk eller vispgrädde (30ml, valfritt för krämighet)",
+    "80g paprika (röd/gul, hackad)",
+    "50g körsbärstomater (halverade)",
+    "40g babyspenat (eller hackad spenat)",
+    "30g rödlök (hackad)",
+    "1 vitlöksklyfta (finhackad, valfritt)",
+    "30g fetaost eller mozzarella (valfritt, +7g protein)",
+    "1 skiva fullkornsbröd (valfritt, +15g kolhydrater)",
+    "Avokado (50g skivad, valfritt)",
+    "Salt och svartpeppar",
+    "Färsk eller torkad basilika",
+    "Chiliflingor (valfritt)"
+  ],
+  "description": "Kategori: Snabbmat | Typ: Backup Middag/Frukost | Tid: 10 minuter",
+  "totalTime": "PT10M",
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Förbered äggröran (2 min): Knäck 3 ägg i skål Tillsätt 2 msk mjölk (om du vill ha krämigare) Vispa lätt med gaffel, krydda med salt och peppar"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Stek grönsaker (3 min): Värm stor stekpanna på medelhög värme Smält smör (eller hetta olivolja) Stek rödlök 1 minut Tillsätt paprika, stek 2 minuter Tillsätt tomater och vitlök, stek 30 sekunder"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tillaga äggröran (3-4 min): Sänk värmen till låg-medel Häll i äggblandningen över grönsakerna Låt stå 20 sekunder utan att röra Rör försiktigt med gummispatel från kanterna mot mitten Upprepa 4-5 gånger tills ägg börjar stelna (men är fortfarande lite lös) Lägg på spenat och ost (om du använder) Rör en sista gång, ta av från värme"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servera (1 min): Tallrik direkt (ägg fortsätter tillagas av restvärme) Toppa med färsk basilika och chiliflingor Servera med bröd eller avokado"
+    }
+  ],
+  "nutrition": {
+    "calories": "385 kcal",
+    "proteinContent": "28g",
+    "carbohydrateContent": "12g",
+    "fatContent": "26g",
+    "@type": "NutritionInformation"
+  }
+}</script></head>
+<body>
+<div class="container">
+<span class="quick-badge">⚡ SNABBT</span>
+<h1>Snabb Äggröra med Grönsaker</h1>
+<p class="category">Kategori: Snabbmat | Typ: Backup Middag/Frukost | Tid: 10 minuter</p>
+<div class="time-badge">⏱️ TOTAL TID: 10 MINUTER</div>
+<div class="nutrition">
+<h3>Näringsvärden (per portion)</h3>
+<div class="macro-grid">
+<div class="macro-item">
+<div class="macro-value">385</div>
+<div class="macro-label">Kcal</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">28g</div>
+<div class="macro-label">Protein</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">12g</div>
+<div class="macro-label">Kolhydrater</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">26g</div>
+<div class="macro-label">Fett</div>
+</div>
+</div>
+<p style="margin-top: 15px; font-size: 0.9em; color: #7f8c8d;">
+<strong>Makrofördelning:</strong> 29% Protein / 12% Kolhydrater / 61% Fett (LCHF-vänlig)
+            </p>
+</div>
+<div class="ingredients">
+<h2>Ingredienser (1 portion)</h2>
+<h3>Bas:</h3>
+<ul>
+<li><strong>3 hela ägg</strong> (ca 180g → 21g protein)</li>
+<li><strong>1 msk smör eller olivolja</strong> (15g/15ml)</li>
+<li><strong>2 msk mjölk eller vispgrädde</strong> (30ml, valfritt för krämighet)</li>
+</ul>
+<h3>Grönsaker:</h3>
+<ul>
+<li><strong>80g paprika</strong> (röd/gul, hackad)</li>
+<li><strong>50g körsbärstomater</strong> (halverade)</li>
+<li><strong>40g babyspenat</strong> (eller hackad spenat)</li>
+<li><strong>30g rödlök</strong> (hackad)</li>
+<li><strong>1 vitlöksklyfta</strong> (finhackad, valfritt)</li>
+</ul>
+<h3>Tillbehör:</h3>
+<ul>
+<li><strong>30g fetaost eller mozzarella</strong> (valfritt, +7g protein)</li>
+<li><strong>1 skiva fullkornsbröd</strong> (valfritt, +15g kolhydrater)</li>
+<li><strong>Avokado</strong> (50g skivad, valfritt)</li>
+</ul>
+<h3>Kryddor:</h3>
+<ul>
+<li>Salt och svartpeppar</li>
+<li>Färsk eller torkad basilika</li>
+<li>Chiliflingor (valfritt)</li>
+</ul>
+</div>
+<div class="instructions">
+<h2>Tillagningsteg (10 minuter)</h2>
+<ol>
+<li><strong>Förbered äggröran (2 min):</strong>
+<ul>
+<li>Knäck 3 ägg i skål</li>
+<li>Tillsätt 2 msk mjölk (om du vill ha krämigare)</li>
+<li>Vispa lätt med gaffel, krydda med salt och peppar</li>
+</ul>
+</li>
+<li><strong>Stek grönsaker (3 min):</strong>
+<ul>
+<li>Värm stor stekpanna på medelhög värme</li>
+<li>Smält smör (eller hetta olivolja)</li>
+<li>Stek rödlök 1 minut</li>
+<li>Tillsätt paprika, stek 2 minuter</li>
+<li>Tillsätt tomater och vitlök, stek 30 sekunder</li>
+</ul>
+</li>
+<li><strong>Tillaga äggröran (3-4 min):</strong>
+<ul>
+<li>Sänk värmen till låg-medel</li>
+<li>Häll i äggblandningen över grönsakerna</li>
+<li>Låt stå 20 sekunder utan att röra</li>
+<li>Rör försiktigt med gummispatel från kanterna mot mitten</li>
+<li>Upprepa 4-5 gånger tills ägg börjar stelna (men är fortfarande lite lös)</li>
+<li>Lägg på spenat och ost (om du använder)</li>
+<li>Rör en sista gång, ta av från värme</li>
+</ul>
+</li>
+<li><strong>Servera (1 min):</strong>
+<ul>
+<li>Tallrik direkt (ägg fortsätter tillagas av restvärme)</li>
+<li>Toppa med färsk basilika och chiliflingor</li>
+<li>Servera med bröd eller avokado</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tip">
+<strong>💡 Perfekt Äggröra-Hemlighet:</strong> Sänk värmen och ta av pannan från plattan 30 sekunder INNAN äggröran är helt färdig. Restvärmem gör jobbet utan att torka ut äggen. Perfekt resultat: krämig, inte gummiaktig!
+        </div>
+<div class="tip">
+<strong>🔄 Variationer (behåller 10-min tiden):</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Mexikansk:</strong> Byt ost mot cheddar, tillsätt bönor, servera med salsa</li>
+<li><strong>Grekisk:</strong> Fetaost + oliver + oregano + tomater</li>
+<li><strong>Italiensk:</strong> Mozzarella + soltorkade tomater + basilika</li>
+<li><strong>Protein-boost:</strong> Tillsätt 50g skinka eller kokt kyckling (+10g protein)</li>
+<li><strong>Extra LCHF:</strong> Skippa bröd, dubblera ost och avokado</li>
+</ul>
+</div>
+<div class="tip">
+<strong>🛒 Bakjour-Skafferi:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Alltid hemma:</strong> Ägg (håller 3-4 veckor), smör, ost</li>
+<li><strong>Frysta grönsaker:</strong> Funkar lika bra! Paprikamix, spenat</li>
+<li><strong>Nöd-version:</strong> Bara ägg + salt + smör = 5 minuter, 18g protein</li>
+</ul>
+</div>
+<div class="tip">
+<strong>⏰ Tidsoptimering:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Morgon-hack:</strong> Förhacka alla grönsaker kvällen innan → 7 min total tid</li>
+<li><strong>Fryst mix:</strong> Använd färdigskuren paprika från frys → skip steg 2</li>
+<li><strong>Dubbel portion:</strong> 6 ägg + dubbla grönsaker → 2 portioner, 12 min total</li>
+<li><strong>Meal prep:</strong> Gör 4 portioner, förvara 3 dagar, värm 90 sek i mikro</li>
+</ul>
+</div>
+<div class="tip">
+<strong>💪 När passar denna rätt?</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Bakjour kväll:</strong> Hem kl 21:00, äter kl 21:10</li>
+<li><strong>Sen träning:</strong> Snabb proteinrik middag efter gymmet</li>
+<li><strong>Lördag frukost:</strong> Mer mättande än Body Science shake</li>
+<li><strong>Akut måltid:</strong> Glömt planera, har bara skafferivaror hemma</li>
+</ul>
+</div>
+<div class="tip">
+<strong>🍳 Pro-Tips:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Krämighet:</strong> 1-2 msk Philadelphia eller crème fraiche → ultra-krämig (+ 50 kcal)</li>
+<li><strong>Fluffighet:</strong> Vispa äggen hårt i 30 sek med elvisp → mer volym</li>
+<li><strong>Restaurang-kvalitet:</strong> Tillsätt 0.5 tsk dijonsenap i äggblandningen</li>
+<li><strong>Anti-stick:</strong> Använd non-stick panna eller gjutjärn väl insmord</li>
+</ul>
+</div>
+<hr style="margin: 30px 0; border: none; border-top: 1px solid #ecf0f1;"/>
+<p style="text-align: center; color: #95a5a6; font-size: 0.9em;">
+<strong>Healthplan Ofalken</strong> | Snabbrecept | Uppdaterad: 2026-04-02
+        </p>
+</div>
+</body>
+</html>

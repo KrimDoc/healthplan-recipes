@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VV Kyckling Curry med Ris</title>
+<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .vv-badge {
+            display: inline-block;
+            background: #9b59b6;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .category {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .nutrition {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .nutrition h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .macro-item {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        .macro-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #9b59b6;
+        }
+        .macro-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+        .ingredients, .instructions, .meal-prep {
+            margin: 25px 0;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 10px;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        .tip {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Kyckling Curry med Jasminris & Grönsaker",
+  "recipeIngredient": [
+    "150g kycklingbröst (tärnat)",
+    "60g jasminris (torrvikt → 180g kokt)",
+    "100ml lätt kokosmjölk (ca 5% fett)",
+    "100ml kycklingbuljong (låg-natrium)",
+    "1 msk currypasta (röd eller gul, 15g)",
+    "1 tsk fisksås (5ml, valfritt)",
+    "1 tsk honung (5g)",
+    "1 msk majsstärkelse (för tjockare sås)",
+    "100g broccoli (buketter)",
+    "80g paprika (röd, strimlad)",
+    "60g morötter (strimlad eller skivad)",
+    "50g lök (hackad)",
+    "2 vitlöksklyftor (finhackade)",
+    "20g färsk ingefära (riven)",
+    "Salt och peppar",
+    "1 tsk lime-juice",
+    "Färsk koriander (garnering)",
+    "Chiliflingor (valfritt)"
+  ],
+  "description": "Kategori: Viktväktarna | Typ: Mättande middag | Tid: 35 minuter",
+  "totalTime": "PT35M",
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Koka riset (20 min): Koka 60g jasminris i 120ml vatten Koka upp, sänk till låg värme, lock på 12-15 minuter tills vattnet absorberats Låt vila 5 min med lock på"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Förbered ingredienser (5 min): Tärna kycklingen i 2 cm bitar Hacka lök och vitlök, riv ingefära Strimla paprika och morötter Dela broccoli i små buketter"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bryn kycklingen (6 min): Hetta stor panna/wok på medelhög värme Spray med matlagningsspray (VV 0 poäng) Bryn kyckling tills gyllene (4-5 min) Ta upp och ställ åt sidan"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Gör currysåsen (8 min): Stek lök, vitlök, ingefära i samma panna (2 min) Tillsätt currypasta, stek 1 minut (doftar gott) Häll i kokosmjölk och buljong Tillsätt honung och fisksås Koka upp, sänk till medel"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tillaga grönsaker (5 min): Lägg i morötter och paprika, koka 3 min Lägg i broccoli, koka 2 min Lägg tillbaka kycklingen, värm 1 min"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tjockna såsen (1 min): Blanda 1 msk majsstärkelse med 2 msk kallt vatten Rör ner i såsen medan den kokar Koka 30 sek tills tjockare"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servera: Ris i botten (180g kokt) Currysås och kyckling över Toppa med färsk koriander och lime"
+    }
+  ],
+  "nutrition": {
+    "calories": "445 kcal",
+    "proteinContent": "38g",
+    "carbohydrateContent": "52g",
+    "fatContent": "9g",
+    "@type": "NutritionInformation"
+  }
+}</script></head>
+<body>
+<div class="container">
+<span class="vv-badge">VV VIKTVÄKTARNA</span>
+<h1>Kyckling Curry med Jasminris &amp; Grönsaker</h1>
+<p class="category">Kategori: Viktväktarna | Typ: Mättande middag | Tid: 35 minuter</p>
+<div class="nutrition">
+<h3>Näringsvärden (per portion)</h3>
+<div class="macro-grid">
+<div class="macro-item">
+<div class="macro-value">445</div>
+<div class="macro-label">Kcal</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">38g</div>
+<div class="macro-label">Protein</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">52g</div>
+<div class="macro-label">Kolhydrater</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">9g</div>
+<div class="macro-label">Fett</div>
+</div>
+</div>
+<p style="margin-top: 15px; font-size: 0.9em; color: #7f8c8d;">
+<strong>Makrofördelning:</strong> 34% Protein / 47% Kolhydrater / 18% Fett<br/>
+<strong>VV-Poäng:</strong> ~7 SmartPoints (beroende på ingredienser)
+            </p>
+</div>
+<div class="ingredients">
+<h2>Ingredienser (1 portion)</h2>
+<h3>Proteinbas:</h3>
+<ul>
+<li><strong>150g kycklingbröst</strong> (tärnat)</li>
+<li><strong>60g jasminris</strong> (torrvikt → 180g kokt)</li>
+</ul>
+<h3>Currysås:</h3>
+<ul>
+<li><strong>100ml lätt kokosmjölk</strong> (ca 5% fett)</li>
+<li><strong>100ml kycklingbuljong</strong> (låg-natrium)</li>
+<li><strong>1 msk currypasta</strong> (röd eller gul, 15g)</li>
+<li><strong>1 tsk fisksås</strong> (5ml, valfritt)</li>
+<li><strong>1 tsk honung</strong> (5g)</li>
+<li><strong>1 msk majsstärkelse</strong> (för tjockare sås)</li>
+</ul>
+<h3>Grönsaker:</h3>
+<ul>
+<li><strong>100g broccoli</strong> (buketter)</li>
+<li><strong>80g paprika</strong> (röd, strimlad)</li>
+<li><strong>60g morötter</strong> (strimlad eller skivad)</li>
+<li><strong>50g lök</strong> (hackad)</li>
+<li><strong>2 vitlöksklyftor</strong> (finhackade)</li>
+<li><strong>20g färsk ingefära</strong> (riven)</li>
+</ul>
+<h3>Kryddor &amp; Topping:</h3>
+<ul>
+<li>Salt och peppar</li>
+<li>1 tsk lime-juice</li>
+<li>Färsk koriander (garnering)</li>
+<li>Chiliflingor (valfritt)</li>
+</ul>
+</div>
+<div class="instructions">
+<h2>Tillagningsteg</h2>
+<ol>
+<li><strong>Koka riset (20 min):</strong>
+<ul>
+<li>Koka 60g jasminris i 120ml vatten</li>
+<li>Koka upp, sänk till låg värme, lock på</li>
+<li>12-15 minuter tills vattnet absorberats</li>
+<li>Låt vila 5 min med lock på</li>
+</ul>
+</li>
+<li><strong>Förbered ingredienser (5 min):</strong>
+<ul>
+<li>Tärna kycklingen i 2 cm bitar</li>
+<li>Hacka lök och vitlök, riv ingefära</li>
+<li>Strimla paprika och morötter</li>
+<li>Dela broccoli i små buketter</li>
+</ul>
+</li>
+<li><strong>Bryn kycklingen (6 min):</strong>
+<ul>
+<li>Hetta stor panna/wok på medelhög värme</li>
+<li>Spray med matlagningsspray (VV 0 poäng)</li>
+<li>Bryn kyckling tills gyllene (4-5 min)</li>
+<li>Ta upp och ställ åt sidan</li>
+</ul>
+</li>
+<li><strong>Gör currysåsen (8 min):</strong>
+<ul>
+<li>Stek lök, vitlök, ingefära i samma panna (2 min)</li>
+<li>Tillsätt currypasta, stek 1 minut (doftar gott)</li>
+<li>Häll i kokosmjölk och buljong</li>
+<li>Tillsätt honung och fisksås</li>
+<li>Koka upp, sänk till medel</li>
+</ul>
+</li>
+<li><strong>Tillaga grönsaker (5 min):</strong>
+<ul>
+<li>Lägg i morötter och paprika, koka 3 min</li>
+<li>Lägg i broccoli, koka 2 min</li>
+<li>Lägg tillbaka kycklingen, värm 1 min</li>
+</ul>
+</li>
+<li><strong>Tjockna såsen (1 min):</strong>
+<ul>
+<li>Blanda 1 msk majsstärkelse med 2 msk kallt vatten</li>
+<li>Rör ner i såsen medan den kokar</li>
+<li>Koka 30 sek tills tjockare</li>
+</ul>
+</li>
+<li><strong>Servera:</strong>
+<ul>
+<li>Ris i botten (180g kokt)</li>
+<li>Currysås och kyckling över</li>
+<li>Toppa med färsk koriander och lime</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tip">
+<strong>💜 VV-Tips:</strong> Använd matlagningsspray istället för olja när du steker → sparar 3-4 SmartPoints. Lätt kokosmjölk istället för full-fet → sparar ytterligare 2 poäng. Total: ~7 SP istället för 13 SP!
+        </div>
+<div class="meal-prep">
+<h2>Meal Prep &amp; Förvaring</h2>
+<h3>Batch Cooking (4 portioner):</h3>
+<ul>
+<li><strong>Ris:</strong> 240g torrvikt → 720g kokt (4×180g)</li>
+<li><strong>Kyckling:</strong> 600g rått → 460g kokt</li>
+<li><strong>Currysås:</strong> Quadrupla alla ingredienser</li>
+<li><strong>Grönsaker:</strong> 4x alla mängder</li>
+<li><strong>Total tid:</strong> 45 minuter för 4 portioner</li>
+</ul>
+<h3>Förvaring:</h3>
+<ul>
+<li><strong>Kylskåp:</strong> 4 dagar i lufttät matlåda</li>
+<li><strong>Frys:</strong> 3 månader (perfekt för meal prep)</li>
+<li><strong>Separera:</strong> Förvara ris separat om möjligt (bättre textur)</li>
+</ul>
+<h3>Uppvärmning:</h3>
+<ul>
+<li>Mikro: 3 minuter på 800W (tillsätt 1 msk vatten för fukt)</li>
+<li>Stekpanna: Värm på medel 5 min, rör regelbundet</li>
+</ul>
+</div>
+<div class="warning">
+<strong>⚠️ VV SmartPoints Nedbrytning:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li>Kyckling: 0 SP (mager proteinkälla)</li>
+<li>Ris (60g torr): 4 SP</li>
+<li>Lätt kokosmjölk: 2 SP</li>
+<li>Currypasta + honung: 1 SP</li>
+<li>Grönsaker: 0 SP (fri-mat i VV)</li>
+<li><strong>Totalt: ~7 SP per portion</strong></li>
+</ul>
+</div>
+<div class="tip">
+<strong>🔄 VV-Variationer:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Lägre poäng:</strong> Byt ris mot blomkålsris (-4 SP = 3 SP total)</li>
+<li><strong>Vegansk:</strong> Byt kyckling mot 200g kikärtor (+1 SP)</li>
+<li><strong>Proteinboost:</strong> Tillsätt 100g edamamebönor (0 SP, +9g protein)</li>
+<li><strong>Grönare:</strong> Dubblera grönsaker (fortfarande 0 SP)</li>
+<li><strong>Krämigare:</strong> Tillsätt 50g 0% grekisk yoghurt (+0 SP)</li>
+</ul>
+</div>
+<div class="tip">
+<strong>🥘 Thai-Restaurang Hemma:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Autentisk smak:</strong> Tillsätt 2-3 kaffirlimeblad under kokning</li>
+<li><strong>Het:</strong> 1 färsk chilipeppar finhackad (0 SP)</li>
+<li><strong>Söt:</strong> Öka honung till 1.5 tsk för mild thai-curry</li>
+<li><strong>Umami:</strong> 1 tsk sojasås istället för fisksås (fungerar lika bra)</li>
+</ul>
+</div>
+<hr style="margin: 30px 0; border: none; border-top: 1px solid #ecf0f1;"/>
+<p style="text-align: center; color: #95a5a6; font-size: 0.9em;">
+<strong>Healthplan Ofalken</strong> | Viktväktarna Recept | Uppdaterad: 2026-04-02
+        </p>
+</div>
+</body>
+</html>

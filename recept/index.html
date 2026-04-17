@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthplan Receptbank</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .category-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+
+        .category-icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+
+        .category-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .category-description {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .recipe-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: currentColor;
+        }
+
+        .recipe-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .recipe-macros {
+            display: flex;
+            gap: 10px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .macro {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .favorite-badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Category colors */
+        .wr66 .category-header { border-color: #27ae60; color: #27ae60; }
+        .wr66 .recipe-card:hover { border-color: #27ae60; }
+
+        .lchf .category-header { border-color: #e74c3c; color: #e74c3c; }
+        .lchf .recipe-card:hover { border-color: #e74c3c; }
+
+        .vv .category-header { border-color: #9b59b6; color: #9b59b6; }
+        .vv .recipe-card:hover { border-color: #9b59b6; }
+
+        .snabb .category-header { border-color: #3498db; color: #3498db; }
+        .snabb .recipe-card:hover { border-color: #3498db; }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Healthplan Receptbank</h1>
+            <p class="subtitle">Ofalken's Måltidssamling | Uppdaterad: 2026-04-12</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Recept</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Kategorier</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Favoriter</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- V16 Middagar (NEW 2026-04-12) -->
+        <section class="category-section" style="border-left: 4px solid #2563eb;">
+            <div class="category-header" style="border-color: #2563eb; color: #2563eb;">
+                <span class="category-icon">📅</span>
+                <div>
+                    <h2 class="category-title">V16 Middagar (apr 13-19)</h2>
+                    <p class="category-description">Veckans middagar: laga kvall &rarr; matlada lunch nasta dag</p>
+                </div>
+            </div>
+
+            <div class="recipe-grid">
+                <a href="lax_sotpotatis_spenat.html" class="recipe-card" style="border-color: transparent;">
+                    <div class="recipe-title">Lax med Sotpotatis &amp; Spenat</div>
+                    <div class="recipe-meta">
+                        <span>⏱ 30 min</span>
+                        <span>🔥 420 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">28g P</span>
+                        <span class="macro">22g K</span>
+                        <span class="macro">20g F</span>
+                    </div>
+                </a>
+
+                <a href="chili_con_carne.html" class="recipe-card" style="border-color: transparent;">
+                    <span class="favorite-badge" style="background: #ea580c; color: white;">BATCH 6 PORT</span>
+                    <div class="recipe-title">Chili con Carne med Boenor</div>
+                    <div class="recipe-meta">
+                        <span>⏱ 40 min</span>
+                        <span>🔥 500 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">42g P</span>
+                        <span class="macro">35g K</span>
+                        <span class="macro">14g F</span>
+                    </div>
+                </a>
+
+                <a href="gronsakomelett_ost.html" class="recipe-card" style="border-color: transparent;">
+                    <div class="recipe-title">Gronsakomelett med Cheddar</div>
+                    <div class="recipe-meta">
+                        <span>⏱ 15 min</span>
+                        <span>🔥 370 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">25g P</span>
+                        <span class="macro">8g K</span>
+                        <span class="macro">27g F</span>
+                    </div>
+                </a>
+
+                <a href="linssoppa_express.html" class="recipe-card" style="border-color: transparent;">
+                    <div class="recipe-title">Rod Linssoppa Express</div>
+                    <div class="recipe-meta">
+                        <span>⏱ 15 min</span>
+                        <span>🔥 350 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">20g P</span>
+                        <span class="macro">40g K</span>
+                        <span class="macro">6g F</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- WR66 Category -->
+        <section class="category-section wr66">
+            <div class="category-header">
+                <span class="category-icon">💪</span>
+                <div>
+                    <h2 class="category-title">WR66 Recept</h2>
+                    <p class="category-description">Proteinrika måltider för muskelbyggande och återhämtning</p>
+                </div>
+            </div>
+
+            <div class="recipe-grid">
+                <a href="wr66_kycklingbowl.html" class="recipe-card">
+                    <span class="favorite-badge">⭐ FAVORIT</span>
+                    <div class="recipe-title">Kycklingbowl med Quinoa</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 25 min</span>
+                        <span>🔥 425 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">42g P</span>
+                        <span class="macro">38g K</span>
+                        <span class="macro">12g F</span>
+                    </div>
+                </a>
+
+                <a href="wr66_laxsallad.html" class="recipe-card">
+                    <div class="recipe-title">Laxsallad med Avokado</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 20 min</span>
+                        <span>🔥 465 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">36g P</span>
+                        <span class="macro">28g K</span>
+                        <span class="macro">24g F</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- LCHF Category -->
+        <section class="category-section lchf">
+            <div class="category-header">
+                <span class="category-icon">🥑</span>
+                <div>
+                    <h2 class="category-title">LCHF Recept</h2>
+                    <p class="category-description">Låg-kolhydrat, hög-fett för stabil energi och mättnad</p>
+                </div>
+            </div>
+
+            <div class="recipe-grid">
+                <a href="lchf_notkott_sotpotatis.html" class="recipe-card">
+                    <span class="favorite-badge">⭐ FAVORIT</span>
+                    <div class="recipe-title">Nötkött med Sötpotatis</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 30 min</span>
+                        <span>🔥 485 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">45g P</span>
+                        <span class="macro">28g K</span>
+                        <span class="macro">22g F</span>
+                    </div>
+                </a>
+
+                <a href="lchf_torsk_broccoli.html" class="recipe-card">
+                    <div class="recipe-title">Torsk med Rostad Broccoli</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 25 min</span>
+                        <span>🔥 395 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">42g P</span>
+                        <span class="macro">12g K</span>
+                        <span class="macro">20g F</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Viktväktarna Category -->
+        <section class="category-section vv">
+            <div class="category-header">
+                <span class="category-icon">💜</span>
+                <div>
+                    <h2 class="category-title">Viktväktarna Recept</h2>
+                    <p class="category-description">SmartPoints-vänliga, mättande och näringsrika måltider</p>
+                </div>
+            </div>
+
+            <div class="recipe-grid">
+                <a href="vv_kyckling_curry.html" class="recipe-card">
+                    <div class="recipe-title">Kyckling Curry med Ris</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 35 min</span>
+                        <span>🔥 445 kcal</span>
+                        <span>💜 7 SP</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">38g P</span>
+                        <span class="macro">52g K</span>
+                        <span class="macro">9g F</span>
+                    </div>
+                </a>
+
+                <a href="vv_vegetarisk_chili.html" class="recipe-card">
+                    <div class="recipe-title">Vegetarisk Chili</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 35 min</span>
+                        <span>🔥 385 kcal</span>
+                        <span>💜 5 SP</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">22g P</span>
+                        <span class="macro">58g K</span>
+                        <span class="macro">8g F</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Snabbmat Category -->
+        <section class="category-section snabb">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <div>
+                    <h2 class="category-title">Snabba Recept</h2>
+                    <p class="category-description">Backup-måltider för bakjour, sen träning och tidsbrist</p>
+                </div>
+            </div>
+
+            <div class="recipe-grid">
+                <a href="snabb_tonfisksallad.html" class="recipe-card">
+                    <div class="recipe-title">Tonfisksallad med Pasta</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 15 min</span>
+                        <span>🔥 420 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">35g P</span>
+                        <span class="macro">45g K</span>
+                        <span class="macro">10g F</span>
+                    </div>
+                </a>
+
+                <a href="snabb_aggrora.html" class="recipe-card">
+                    <div class="recipe-title">Äggröra med Grönsaker</div>
+                    <div class="recipe-meta">
+                        <span>⏱️ 10 min</span>
+                        <span>🔥 385 kcal</span>
+                    </div>
+                    <div class="recipe-macros">
+                        <span class="macro">28g P</span>
+                        <span class="macro">12g K</span>
+                        <span class="macro">26g F</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>📱 OneDrive Synkad</strong> | Offline-tillgänglig</p>
+            <p>Healthplan Ofalken | Göteborg | 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

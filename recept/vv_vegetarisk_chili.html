@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VV Vegetarisk Chili</title>
+<style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .vv-badge {
+            display: inline-block;
+            background: #9b59b6;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .category {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .nutrition {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .nutrition h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .macro-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .macro-item {
+            text-align: center;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        .macro-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #9b59b6;
+        }
+        .macro-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+        .ingredients, .instructions, .meal-prep {
+            margin: 25px 0;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 10px;
+        }
+        ul, ol {
+            line-height: 1.8;
+        }
+        .tip {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Vegetarisk Chili con Carne",
+  "recipeIngredient": [
+    "120g svarta bönor (kokta, från burk avrunna → 240g om torkade)",
+    "80g kidneybönor (kokta, från burk avrunna)",
+    "50g linser (röda eller gröna, torkade)",
+    "60g ris (torrvikt, helst fullkorn)",
+    "100g lök (hackad, ca 1 medelstor)",
+    "2 vitlöksklyftor (finhackade)",
+    "80g paprika (röd/gul, tärnad)",
+    "60g majskornor (burk eller fryst)",
+    "200g krossade tomater (burk)",
+    "1 msk tomatpuré (15g)",
+    "1.5 tsk chilipulver (justera efter smak)",
+    "1 tsk spiskummin",
+    "1 tsk paprikapulver (rökt)",
+    "0.5 tsk oregano (torkad)",
+    "0.25 tsk cayennepeppar (valfritt)",
+    "150ml grönsaksbuljong (låg-natrium)",
+    "Salt och peppar",
+    "2 msk 0% grekisk yoghurt",
+    "Färsk koriander (hackad)",
+    "Lime (klyftor)",
+    "Jalapeños (valfritt, skivade)"
+  ],
+  "description": "Kategori: Viktväktarna | Typ: Vegetarisk gryta | Tid: 35 minuter",
+  "totalTime": "PT35M",
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Koka riset (20 min parallellt): Koka 60g ris enligt anvisning 12-15 minuter med lock på"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Förbered ingredienser (5 min): Skölj svarta bönor och kidneybönor (ta bort överskottssalt) Skölj linser i kallt vatten Hacka lök och vitlök, tärna paprika"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Sautéra bas (5 min): Värm stor gryta på medelhög värme Spray med matlagningsspray (VV 0 SP) Stek lök tills mjuk (3 min) Tillsätt vitlök, stek 1 min Tillsätt alla kryddor, stek 30 sek (frigör aromer)"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Bygg chilin (20 min): Tillsätt tomatpuré, rör 1 min Häll i krossade tomater och buljong Lägg i svarta bönor, kidneybönor, linser Koka upp, sänk till låg, lock på Sjud 15 minuter tills linser mjuka"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Slutför (5 min): Tillsätt paprika och majs Sjud 3-4 minuter utan lock (tjockare) Smaka av, justera kryddor Tillsätt lime-juice för fräschör"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Servera: Tallrik: Ris i botten (180g kokt) Häll över chili generöst Toppa med grekisk yoghurt 0% Garnera med koriander och lime"
+    }
+  ],
+  "nutrition": {
+    "calories": "385 kcal",
+    "proteinContent": "22g",
+    "carbohydrateContent": "58g",
+    "fatContent": "8g",
+    "@type": "NutritionInformation"
+  }
+}</script></head>
+<body>
+<div class="container">
+<span class="vv-badge">VV VIKTVÄKTARNA</span>
+<h1>Vegetarisk Chili con Carne</h1>
+<p class="category">Kategori: Viktväktarna | Typ: Vegetarisk gryta | Tid: 35 minuter</p>
+<div class="nutrition">
+<h3>Näringsvärden (per portion)</h3>
+<div class="macro-grid">
+<div class="macro-item">
+<div class="macro-value">385</div>
+<div class="macro-label">Kcal</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">22g</div>
+<div class="macro-label">Protein</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">58g</div>
+<div class="macro-label">Kolhydrater</div>
+</div>
+<div class="macro-item">
+<div class="macro-value">8g</div>
+<div class="macro-label">Fett</div>
+</div>
+</div>
+<p style="margin-top: 15px; font-size: 0.9em; color: #7f8c8d;">
+<strong>Makrofördelning:</strong> 23% Protein / 60% Kolhydrater / 19% Fett<br/>
+<strong>VV-Poäng:</strong> ~5 SmartPoints (inklusive ris)<br/>
+<strong>Fiber:</strong> 18g (mättande och bra för magen)
+            </p>
+</div>
+<div class="ingredients">
+<h2>Ingredienser (1 portion)</h2>
+<h3>Bas:</h3>
+<ul>
+<li><strong>120g svarta bönor</strong> (kokta, från burk avrunna → 240g om torkade)</li>
+<li><strong>80g kidneybönor</strong> (kokta, från burk avrunna)</li>
+<li><strong>50g linser</strong> (röda eller gröna, torkade)</li>
+<li><strong>60g ris</strong> (torrvikt, helst fullkorn)</li>
+</ul>
+<h3>Grönsaker:</h3>
+<ul>
+<li><strong>100g lök</strong> (hackad, ca 1 medelstor)</li>
+<li><strong>2 vitlöksklyftor</strong> (finhackade)</li>
+<li><strong>80g paprika</strong> (röd/gul, tärnad)</li>
+<li><strong>60g majskornor</strong> (burk eller fryst)</li>
+<li><strong>200g krossade tomater</strong> (burk)</li>
+<li><strong>1 msk tomatpuré</strong> (15g)</li>
+</ul>
+<h3>Kryddor &amp; Vätska:</h3>
+<ul>
+<li><strong>1.5 tsk chilipulver</strong> (justera efter smak)</li>
+<li><strong>1 tsk spiskummin</strong></li>
+<li><strong>1 tsk paprikapulver (rökt)</strong></li>
+<li><strong>0.5 tsk oregano</strong> (torkad)</li>
+<li><strong>0.25 tsk cayennepeppar</strong> (valfritt)</li>
+<li><strong>150ml grönsaksbuljong</strong> (låg-natrium)</li>
+<li>Salt och peppar</li>
+</ul>
+<h3>Topping (VV 0 SP):</h3>
+<ul>
+<li><strong>2 msk 0% grekisk yoghurt</strong></li>
+<li><strong>Färsk koriander</strong> (hackad)</li>
+<li><strong>Lime</strong> (klyftor)</li>
+<li><strong>Jalapeños</strong> (valfritt, skivade)</li>
+</ul>
+</div>
+<div class="instructions">
+<h2>Tillagningsteg</h2>
+<ol>
+<li><strong>Koka riset (20 min parallellt):</strong>
+<ul>
+<li>Koka 60g ris enligt anvisning</li>
+<li>12-15 minuter med lock på</li>
+</ul>
+</li>
+<li><strong>Förbered ingredienser (5 min):</strong>
+<ul>
+<li>Skölj svarta bönor och kidneybönor (ta bort överskottssalt)</li>
+<li>Skölj linser i kallt vatten</li>
+<li>Hacka lök och vitlök, tärna paprika</li>
+</ul>
+</li>
+<li><strong>Sautéra bas (5 min):</strong>
+<ul>
+<li>Värm stor gryta på medelhög värme</li>
+<li>Spray med matlagningsspray (VV 0 SP)</li>
+<li>Stek lök tills mjuk (3 min)</li>
+<li>Tillsätt vitlök, stek 1 min</li>
+<li>Tillsätt alla kryddor, stek 30 sek (frigör aromer)</li>
+</ul>
+</li>
+<li><strong>Bygg chilin (20 min):</strong>
+<ul>
+<li>Tillsätt tomatpuré, rör 1 min</li>
+<li>Häll i krossade tomater och buljong</li>
+<li>Lägg i svarta bönor, kidneybönor, linser</li>
+<li>Koka upp, sänk till låg, lock på</li>
+<li>Sjud 15 minuter tills linser mjuka</li>
+</ul>
+</li>
+<li><strong>Slutför (5 min):</strong>
+<ul>
+<li>Tillsätt paprika och majs</li>
+<li>Sjud 3-4 minuter utan lock (tjockare)</li>
+<li>Smaka av, justera kryddor</li>
+<li>Tillsätt lime-juice för fräschör</li>
+</ul>
+</li>
+<li><strong>Servera:</strong>
+<ul>
+<li>Tallrik: Ris i botten (180g kokt)</li>
+<li>Häll över chili generöst</li>
+<li>Toppa med grekisk yoghurt 0%</li>
+<li>Garnera med koriander och lime</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tip">
+<strong>💜 VV-Hack:</strong> Bönor och linser är "0 SmartPoints" när du lagar dem själv från torkade! Burk-bönor räknas som 1 SP per 100g pga tillsatt salt/socker. Koka själv i stor sats → spara 2-3 SP per portion!
+        </div>
+<div class="meal-prep">
+<h2>Meal Prep &amp; Förvaring</h2>
+<h3>Batch Cooking (6 portioner - Perfekt veckomål):</h3>
+<ul>
+<li><strong>Chili:</strong> Sexdubblera alla ingredienser</li>
+<li><strong>Tid:</strong> 50 minuter totalt (samma grundtid)</li>
+<li><strong>Portionering:</strong> Fyll 6 matlådor direkt efter tillagning</li>
+<li><strong>Ris:</strong> Koka separat, förvara i egen burk</li>
+</ul>
+<h3>Förvaring:</h3>
+<ul>
+<li><strong>Kylskåp:</strong> 5 dagar (chilin blir godare dag 2-3!)</li>
+<li><strong>Frys:</strong> 4 månader (perfekt för meal prep)</li>
+<li><strong>Portioner:</strong> Frys i enskilda portioner för flexibilitet</li>
+</ul>
+<h3>Uppvärmning:</h3>
+<ul>
+<li><strong>Mikro:</strong> 3 minuter på 800W (tillsätt 2 msk vatten)</li>
+<li><strong>Kastrull:</strong> Värm på låg 5 min, rör regelbundet</li>
+<li><strong>Från fryst:</strong> Tina i kyl 12h, eller mikro 6 min</li>
+</ul>
+</div>
+<div class="warning">
+<strong>⚠️ VV SmartPoints Nedbrytning:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li>Svarta bönor (120g burk): 1 SP</li>
+<li>Kidneybönor (80g burk): 1 SP</li>
+<li>Linser (50g torra): 0 SP (ZeroPoint Food!)</li>
+<li>Fullkornsris (60g torr): 3 SP</li>
+<li>Grönsaker &amp; kryddor: 0 SP</li>
+<li>Grekisk yoghurt 0%: 0 SP</li>
+<li><strong>Totalt: ~5 SP per portion</strong></li>
+</ul>
+</div>
+<div class="tip">
+<strong>🔄 Variationer:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Extra protein:</strong> Tillsätt 100g kokt kyckling (+0 SP, +20g protein)</li>
+<li><strong>Lägre SP:</strong> Byt ris mot blomkålsris (-3 SP = 2 SP total)</li>
+<li><strong>Vegansk:</strong> Skippa yoghurt, använd cashew-crème</li>
+<li><strong>Tex-Mex:</strong> Servera med 30g tortillachips (+3 SP)</li>
+<li><strong>Hetare:</strong> Tillsätt 1 färsk habanero (0 SP, mycket stark!)</li>
+<li><strong>Söt-kryddig:</strong> 1 tsk mörk choklad riven (ger djup smak)</li>
+</ul>
+</div>
+<div class="tip">
+<strong>🌶️ Chili-Intensitet Guide:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Mild:</strong> 1 tsk chilipulver, skippa cayenne</li>
+<li><strong>Medium:</strong> 1.5 tsk chilipulver + 0.25 tsk cayenne (receptet)</li>
+<li><strong>Het:</strong> 2 tsk chilipulver + 0.5 tsk cayenne + 1 jalapeño</li>
+<li><strong>Eldsvåda:</strong> 2.5 tsk + 1 tsk cayenne + 1 habanero (varning!)</li>
+</ul>
+</div>
+<div class="tip">
+<strong>🥄 Serverings-idéer (alla VV-vänliga):</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Bowl-style:</strong> Chili + ris + avokado (30g, +2 SP)</li>
+<li><strong>Nachoplåt:</strong> Tortillachips + chili + ost + jalapeños (+6 SP)</li>
+<li><strong>Fajita:</strong> Fyll fullkornstortilla med chili (+3 SP)</li>
+<li><strong>Baked potato:</strong> Halv bakad potatis fylld med chili (+2 SP)</li>
+<li><strong>Pure:</strong> Chilin ensam med yoghurt (5 SP, ingen ris)</li>
+</ul>
+</div>
+<div class="tip">
+<strong>💰 Budget-Vänlig Rätt:</strong>
+<ul style="margin: 10px 0 0 0;">
+<li><strong>Svarta bönor burk:</strong> 12 SEK/burk</li>
+<li><strong>Kidneybönor burk:</strong> 10 SEK/burk</li>
+<li><strong>Linser torra:</strong> 25 SEK/500g (10 portioner)</li>
+<li><strong>Krossade tomater:</strong> 8 SEK/burk</li>
+<li><strong>Övrigt:</strong> ~15 SEK (grönsaker, kryddor, ris)</li>
+<li><strong>Total per portion:</strong> ~18 SEK (!)</li>
+<li><strong>Batch (6 port):</strong> ~108 SEK = 18 SEK/portion</li>
+</ul>
+</div>
+<hr style="margin: 30px 0; border: none; border-top: 1px solid #ecf0f1;"/>
+<p style="text-align: center; color: #95a5a6; font-size: 0.9em;">
+<strong>Healthplan Ofalken</strong> | Viktväktarna Recept | Uppdaterad: 2026-04-02
+        </p>
+</div>
+</body>
+</html>
