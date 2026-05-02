@@ -1,0 +1,50 @@
+name: Deploy & Notify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'recept/**'
+      - 'index.html'
+
+jobs:
+  validate-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Count recipes
+        id: count
+        run: |
+          COUNT=$(find recept -name "*.html" ! -name "index.html" | wc -l)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "Recipe count: $COUNT"
+
+      - name: Validate recipe HTML has schema.org markup
+        run: |
+          MISSING=0
+          for f in recept/*.html; do
+            [ "$f" = "recept/index.html" ] && continue
+            if ! grep -q "schema.org/Recipe" "$f"; then
+              echo "MISSING schema.org/Recipe: $f"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          if [ $MISSING -gt 0 ]; then
+            echo "::warning::$MISSING recipe(s) missing schema.org/Recipe markup"
+          else
+            echo "All recipes have schema.org/Recipe markup ✓"
+          fi
+
+      - name: Notify Slack on deploy
+        if: success()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_LIFE_COORDINATION }}
+        run: |
+          if [ -n "$SLACK_WEBHOOK" ]; then
+            curl -s -X POST "$SLACK_WEBHOOK" \
+              -H 'Content-type: application/json' \
+              --data "{
+                \"text\": \"*Healthplan Recept — Deploy ${{ github.run_number }}* ✅\nAntal recept: ${{ steps.count.outputs.count }}\nCommit: \`$(echo '${{ github.sha }}' | cut -c1-7)\` — ${{ github.event.head_commit.message }}\nURL: https://krimdoc.github.io/healthplan-recipes/\"
+              }"
+          fi
